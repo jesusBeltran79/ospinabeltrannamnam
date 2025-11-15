@@ -1,0 +1,72 @@
+package co.edu.unbosque.ospinabeltrannamnam.dto;
+
+import java.util.List;
+
+public class RecetaDTO {
+	private Integer recetaId;
+	private String nombre;
+	private String descripcion;
+	private Integer tiempoPreparacion;
+	private List<Integer> ingredientes;
+
+	public RecetaDTO() {
+		super();
+	}
+
+	public RecetaDTO(Integer recetaId, String nombre, String descripcion, Integer tiempoPreparacion,
+			List<Integer> ingredientes) {
+		super();
+		this.recetaId = recetaId;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.tiempoPreparacion = tiempoPreparacion;
+		this.ingredientes = ingredientes;
+	}
+
+	public Integer getRecetaId() {
+		return recetaId;
+	}
+
+	public void setRecetaId(Integer recetaId) {
+		this.recetaId = recetaId;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Integer getTiempoPreparacion() {
+		return tiempoPreparacion;
+	}
+
+	public void setTiempoPreparacion(Integer tiempoPreparacion) {
+		this.tiempoPreparacion = tiempoPreparacion;
+	}
+
+	public List<Integer> getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(List<Integer> ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+
+	@Override
+	public String toString() {
+		return "RecetaDTO [recetaId=" + recetaId + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ ", tiempoPreparacion=" + tiempoPreparacion + ", ingredientes=" + ingredientes + "]";
+	}
+
+}

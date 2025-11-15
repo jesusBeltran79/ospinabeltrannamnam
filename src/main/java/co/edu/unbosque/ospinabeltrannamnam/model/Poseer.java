@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "poseer")
+@Table(name = "poseer", uniqueConstraints = @UniqueConstraint(columnNames = { "codigo_ingrediente", "inventario_id" }))
 public class Poseer {
 
 	@Id
@@ -27,7 +27,6 @@ public class Poseer {
 	}
 
 	public Poseer(Ingrediente ingrediente, Inventario inventario, BigDecimal stockMinimo) {
-		super();
 		this.ingrediente = ingrediente;
 		this.inventario = inventario;
 		this.stockMinimo = stockMinimo;
@@ -67,8 +66,8 @@ public class Poseer {
 
 	@Override
 	public String toString() {
-		return "Poseer [id=" + id + ", ingrediente=" + ingrediente + ", inventario=" + inventario + ", stockMinimo="
+		return "Poseer [id=" + id + ", ingrediente=" + (ingrediente != null ? ingrediente.getCodigo() : null)
+				+ ", inventario=" + (inventario != null ? inventario.getInventarioId() : null) + ", stockMinimo="
 				+ stockMinimo + "]";
 	}
-
 }
