@@ -7,19 +7,21 @@ public class RecetaDTO {
 	private String nombre;
 	private String descripcion;
 	private Integer tiempoPreparacion;
+	private String imagen;
 	private List<Integer> ingredientes;
 
 	public RecetaDTO() {
 		super();
 	}
 
-	public RecetaDTO(Integer recetaId, String nombre, String descripcion, Integer tiempoPreparacion,
+	public RecetaDTO(Integer recetaId, String nombre, String descripcion, Integer tiempoPreparacion, String imagen,
 			List<Integer> ingredientes) {
 		super();
 		this.recetaId = recetaId;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tiempoPreparacion = tiempoPreparacion;
+		this.imagen = imagen;
 		this.ingredientes = ingredientes;
 	}
 
@@ -55,6 +57,14 @@ public class RecetaDTO {
 		this.tiempoPreparacion = tiempoPreparacion;
 	}
 
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	public List<Integer> getIngredientes() {
 		return ingredientes;
 	}
@@ -66,7 +76,8 @@ public class RecetaDTO {
 	@Override
 	public String toString() {
 		return "RecetaDTO [recetaId=" + recetaId + ", nombre=" + nombre + ", descripcion=" + descripcion
-				+ ", tiempoPreparacion=" + tiempoPreparacion + ", ingredientes=" + ingredientes + "]";
+				+ ", tiempoPreparacion=" + tiempoPreparacion + ", imagen=" + imagen + ", ingredientes=" + ingredientes
+				+ "]";
 	}
 
 }

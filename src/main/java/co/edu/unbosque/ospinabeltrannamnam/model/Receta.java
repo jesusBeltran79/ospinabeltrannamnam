@@ -21,6 +21,9 @@ public class Receta {
 	@Column(name = "tiempo_preparacion", nullable = false)
 	private Integer tiempoPreparacion = 0;
 
+	@Column(name = "imagen", length = 255)
+	private String imagen;
+
 	@ManyToMany
 	@JoinTable(name = "emplear", joinColumns = @JoinColumn(name = "receta_id"), inverseJoinColumns = @JoinColumn(name = "codigo_ingrediente"))
 	private List<Ingrediente> ingredientes = new ArrayList<>();
@@ -28,10 +31,11 @@ public class Receta {
 	public Receta() {
 	}
 
-	public Receta(String nombre, String descripcion, Integer tiempoPreparacion) {
+	public Receta(String nombre, String descripcion, Integer tiempoPreparacion, String imagen) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tiempoPreparacion = tiempoPreparacion;
+		this.imagen = imagen;
 	}
 
 	public Integer getRecetaId() {
@@ -66,6 +70,14 @@ public class Receta {
 		this.tiempoPreparacion = tiempoPreparacion;
 	}
 
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	public List<Ingrediente> getIngredientes() {
 		return ingredientes;
 	}
@@ -95,6 +107,6 @@ public class Receta {
 	@Override
 	public String toString() {
 		return "Receta [recetaId=" + recetaId + ", nombre=" + nombre + ", descripcion=" + descripcion
-				+ ", tiempoPreparacion=" + tiempoPreparacion + "]";
+				+ ", tiempoPreparacion=" + tiempoPreparacion + ", imagen=" + imagen + "]";
 	}
 }

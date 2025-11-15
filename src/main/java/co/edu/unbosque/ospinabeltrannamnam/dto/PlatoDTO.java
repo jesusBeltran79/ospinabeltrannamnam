@@ -5,21 +5,24 @@ import java.math.BigDecimal;
 public class PlatoDTO {
 	private Integer platoId;
 	private String nombre;
-	private Integer precioVenta;
-	private Integer margenGanancia;
-	private Integer costo;
+	private BigDecimal precioVenta;
+	private BigDecimal margenGanancia;
+	private BigDecimal costo;
+	private String imagen;
 
 	public PlatoDTO() {
 		super();
 	}
 
-	public PlatoDTO(Integer platoId, String nombre, Integer precioVenta, Integer margenGanancia, Integer costo) {
+	public PlatoDTO(Integer platoId, String nombre, BigDecimal precioVenta, BigDecimal margenGanancia, BigDecimal costo,
+			String imagen) {
 		super();
 		this.platoId = platoId;
 		this.nombre = nombre;
 		this.precioVenta = precioVenta;
 		this.margenGanancia = margenGanancia;
 		this.costo = costo;
+		this.imagen = imagen;
 	}
 
 	public Integer getPlatoId() {
@@ -38,34 +41,42 @@ public class PlatoDTO {
 		this.nombre = nombre;
 	}
 
-	public Integer getPrecioVenta() {
+	public BigDecimal getPrecioVenta() {
 		return precioVenta;
 	}
 
-	public void setPrecioVenta(Integer precioVenta) {
+	public void setPrecioVenta(BigDecimal precioVenta) {
 		this.precioVenta = precioVenta;
 	}
 
-	public Integer getMargenGanancia() {
+	public BigDecimal getMargenGanancia() {
 		return margenGanancia;
 	}
 
-	public void setMargenGanancia(Integer margenGanancia) {
+	public void setMargenGanancia(BigDecimal margenGanancia) {
 		this.margenGanancia = margenGanancia;
 	}
 
-	public Integer getCosto() {
+	public BigDecimal getCosto() {
 		return costo;
 	}
 
-	public void setCosto(Integer costo) {
+	public void setCosto(BigDecimal costo) {
 		this.costo = costo;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	@Override
 	public String toString() {
 		return "PlatoDTO [platoId=" + platoId + ", nombre=" + nombre + ", precioVenta=" + precioVenta
-				+ ", margenGanancia=" + margenGanancia + ", costo=" + costo + "]";
+				+ ", margenGanancia=" + margenGanancia + ", costo=" + costo + ", imagen=" + imagen + "]";
 	}
 
 }
