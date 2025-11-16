@@ -31,6 +31,11 @@ public class DireccionEmpresaController {
         return ResponseEntity.ok(service.getAll());
     }
 
+    @GetMapping("/empresa/{nit}")
+    public ResponseEntity<List<DireccionEmpresaDTO>> listarPorEmpresa(@PathVariable Integer nit) {
+        return ResponseEntity.ok(service.getByEmpresa(nit));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> obtener(@PathVariable Integer id) {
         DireccionEmpresaDTO dto = service.getById(id);

@@ -2,7 +2,7 @@
  * Esta la clase Util, en la cual creamos nuestras excepciones propias, para poder limitar los errores que pueda generar el usuario.
  */
 
-package co.edu.unbosque.retazoTextil.exception;
+package co.edu.unbosque.ospinabeltrannamnam.exception;
 
 /**
  * Excepción lanzada cuando una entrada de cadena no es válida.

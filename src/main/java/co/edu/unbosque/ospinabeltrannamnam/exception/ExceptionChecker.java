@@ -1,7 +1,7 @@
 /**
  * Esta la clase Util, en la cual creamos nuestras excepciones propias, para poder limitar los errores que pueda generar el usuario.
  */
-package co.edu.unbosque.retazoTextil.exception;
+package co.edu.unbosque.ospinabeltrannamnam.exception;
 
 import java.util.regex.Matcher; // Quien busca si hay similitud
 import java.util.regex.Pattern;//Nos da el patron a buscar

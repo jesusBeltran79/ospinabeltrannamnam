@@ -31,10 +31,15 @@ public class OrdenCompraService {
 
     public int create(OrdenCompraDTO data) {
         OrdenCompra o = new OrdenCompra();
-        o.setFechaEmision(data.getFechaEmision());
+        if (data.getFechaEmision() != null) {
+            o.setFechaEmision(data.getFechaEmision());
+        }
+       
         o.setFechaRecepcion(data.getFechaRecepcion());
-        o.setEstado(data.getEstado());
-        o.setTotal(data.getTotal());
+       
+        if (data.getEstado() != null) o.setEstado(data.getEstado());
+        // Total
+        if (data.getTotal() != null) o.setTotal(data.getTotal());
         if (data.getNitEmpresa() != null) {
             Empresa e = empresaRepo.findById(data.getNitEmpresa()).orElse(null);
             o.setEmpresa(e);
@@ -46,6 +51,7 @@ public class OrdenCompraService {
         repo.save(o);
         return 0;
     }
+
 
     public List<OrdenCompraDTO> getAll() {
         return repo.findAll().stream().map(o -> {

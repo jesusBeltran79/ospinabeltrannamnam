@@ -2,7 +2,9 @@ package co.edu.unbosque.ospinabeltrannamnam.service;
 
 import co.edu.unbosque.ospinabeltrannamnam.dto.DireccionEmpresaDTO;
 import co.edu.unbosque.ospinabeltrannamnam.model.DireccionEmpresa;
+import co.edu.unbosque.ospinabeltrannamnam.model.Empresa;
 import co.edu.unbosque.ospinabeltrannamnam.repository.DireccionEmpresaRepository;
+import co.edu.unbosque.ospinabeltrannamnam.repository.EmpresaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,20 +19,50 @@ public class DireccionEmpresaService {
     private DireccionEmpresaRepository repo;
 
     @Autowired
+    private EmpresaRepository empresaRepo;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     public int create(DireccionEmpresaDTO data) {
-        DireccionEmpresa d = modelMapper.map(data, DireccionEmpresa.class);
-        repo.save(d);
+        // Map manual de campos primitivos: evitar que ModelMapper toque la relación empresa.
+        DireccionEmpresa d = new DireccionEmpresa();
+        d.setDireccionText(data.getDireccionText());
+        d.setCiudad(data.getCiudad());
+        d.setDepartamento(data.getDepartamento());
+        d.setPais(data.getPais());
+
+        // Guardar la dirección primero
+        d = repo.save(d);
+
+        // Si llega empresaNit, asociar la dirección con la empresa (actualizar la FK empresa_nit en direccion)
+        if (data.getEmpresaNit() != null) {
+            Optional<Empresa> opt = empresaRepo.findById(data.getEmpresaNit());
+            if (opt.isPresent()) {
+                Empresa e = opt.get();
+                // Si la relación la deseas reflejar en Empresa (campo direccion en empresa),
+                // decide cuál es el owner. En tu modelo actual, la FK empresa_nit está en DireccionEmpresa,
+                // por lo que la asociación principal será en DireccionEmpresa. Para mantener la compat:
+                d.setEmpresa(e);
+                repo.save(d); // actualizar con esa FK
+            }
+        }
         return 0;
     }
 
     public List<DireccionEmpresaDTO> getAll() {
-        return repo.findAll().stream().map(e -> modelMapper.map(e, DireccionEmpresaDTO.class)).collect(Collectors.toList());
+        return repo.findAll().stream()
+                .map(e -> modelMapper.map(e, DireccionEmpresaDTO.class))
+                .collect(Collectors.toList());
     }
 
     public DireccionEmpresaDTO getById(Integer id) {
-        return repo.findById(id).map(e -> modelMapper.map(e, DireccionEmpresaDTO.class)).orElse(null);
+        return repo.findById(id)
+                .map(e -> {
+                    DireccionEmpresaDTO dto = modelMapper.map(e, DireccionEmpresaDTO.class);
+                    if (e.getEmpresa() != null) dto.setEmpresaNit(e.getEmpresa().getNit());
+                    return dto;
+                }).orElse(null);
     }
 
     public int updateById(Integer id, DireccionEmpresaDTO newData) {
@@ -42,14 +74,41 @@ public class DireccionEmpresaService {
         if (newData.getDepartamento() != null) d.setDepartamento(newData.getDepartamento());
         if (newData.getPais() != null) d.setPais(newData.getPais());
         repo.save(d);
+
+        if (newData.getEmpresaNit() != null) {
+            Optional<Empresa> optE = empresaRepo.findById(newData.getEmpresaNit());
+            if (optE.isPresent()) {
+                d.setEmpresa(optE.get());
+                repo.save(d);
+            }
+        }
+
         return 0;
     }
 
     public int deleteById(Integer id) {
-        return repo.findById(id).map(e -> { repo.delete(e); return 0; }).orElse(1);
+        return repo.findById(id).map(e -> {
+            repo.delete(e);
+            return 0;
+        }).orElse(1);
     }
 
-    public boolean exist(Integer id) { return repo.existsById(id); }
+    public boolean exist(Integer id) {
+        return repo.existsById(id);
+    }
 
-    public long count() { return repo.count(); }
+    public long count() {
+        return repo.count();
+    }
+
+    // Obtener todas las direcciones asociadas a una empresa (según FK en DireccionEmpresa.empresa)
+    public List<DireccionEmpresaDTO> getByEmpresa(Integer nit) {
+        List<DireccionEmpresa> list = repo.findByEmpresaNit(nit); // implementa método en repo
+        if (list == null || list.isEmpty()) return Collections.emptyList();
+        return list.stream().map(d -> {
+            DireccionEmpresaDTO dto = modelMapper.map(d, DireccionEmpresaDTO.class);
+            if (d.getEmpresa() != null) dto.setEmpresaNit(d.getEmpresa().getNit());
+            return dto;
+        }).collect(Collectors.toList());
+    }
 }

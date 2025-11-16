@@ -1,4 +1,4 @@
-package co.edu.unbosque.retazoTextil.exception;
+package co.edu.unbosque.ospinabeltrannamnam.exception;
 
 public class NotValidCedulaNumberException extends Exception {
 
