@@ -1,7 +1,7 @@
 package co.edu.unbosque.ospinabeltrannamnam.model;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
+
 
 @Entity
 @Table(name = "plato")
@@ -15,13 +15,13 @@ public class Plato {
 	private String nombre;
 
 	@Column(name = "precio_venta", precision = 18, scale = 4, nullable = false)
-	private BigDecimal precioVenta = BigDecimal.ZERO;
+	private Integer precioVenta;
 
 	@Column(name = "margen_ganancia", precision = 10, scale = 6)
-	private BigDecimal margenGanancia = BigDecimal.ZERO;
+	private Integer margenGanancia;
 
 	@Column(name = "costo", precision = 18, scale = 4)
-	private BigDecimal costo = BigDecimal.ZERO;
+	private Integer costo;
 
 	@Column(name = "imagen", length = 255)
 	private String imagen;
@@ -29,7 +29,7 @@ public class Plato {
 	public Plato() {
 	}
 
-	public Plato(String nombre, BigDecimal precioVenta, BigDecimal margenGanancia, BigDecimal costo, String imagen) {
+	public Plato(String nombre, Integer precioVenta, Integer margenGanancia, Integer costo, String imagen) {
 		this.nombre = nombre;
 		this.precioVenta = precioVenta;
 		this.margenGanancia = margenGanancia;
@@ -53,27 +53,27 @@ public class Plato {
 		this.nombre = nombre;
 	}
 
-	public BigDecimal getPrecioVenta() {
+	public Integer getPrecioVenta() {
 		return precioVenta;
 	}
 
-	public void setPrecioVenta(BigDecimal precioVenta) {
+	public void setPrecioVenta(Integer precioVenta) {
 		this.precioVenta = precioVenta;
 	}
 
-	public BigDecimal getMargenGanancia() {
+	public Integer getMargenGanancia() {
 		return margenGanancia;
 	}
 
-	public void setMargenGanancia(BigDecimal margenGanancia) {
+	public void setMargenGanancia(Integer margenGanancia) {
 		this.margenGanancia = margenGanancia;
 	}
 
-	public BigDecimal getCosto() {
+	public Integer getCosto() {
 		return costo;
 	}
 
-	public void setCosto(BigDecimal costo) {
+	public void setCosto(Integer costo) {
 		this.costo = costo;
 	}
 

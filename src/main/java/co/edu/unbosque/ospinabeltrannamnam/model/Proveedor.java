@@ -30,7 +30,7 @@ public class Proveedor {
 	private String email;
 
 	@Column(name = "telefono")
-	private Integer telefono;
+	private Long telefono;
 
 	@Column(name = "cargo", length = 80)
 	private String cargo;
@@ -39,7 +39,7 @@ public class Proveedor {
 	}
 
 	public Proveedor(Empresa empresa, String primerNombre, String segundoNombre, String primerApellido,
-			String segundoApellido, String email, Integer telefono, String cargo) {
+			String segundoApellido, String email, Long telefono, String cargo) {
 		super();
 		this.empresa = empresa;
 		this.primerNombre = primerNombre;
@@ -107,11 +107,11 @@ public class Proveedor {
 		this.email = email;
 	}
 
-	public Integer getTelefono() {
+	public Long getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(Integer telefono) {
+	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
 

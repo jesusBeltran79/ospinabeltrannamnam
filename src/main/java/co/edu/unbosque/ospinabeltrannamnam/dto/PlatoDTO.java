@@ -1,13 +1,13 @@
 package co.edu.unbosque.ospinabeltrannamnam.dto;
 
-import java.math.BigDecimal;
+
 
 public class PlatoDTO {
 	private Integer platoId;
 	private String nombre;
-	private BigDecimal precioVenta;
-	private BigDecimal margenGanancia;
-	private BigDecimal costo;
+	private Integer precioVenta;
+	private Integer margenGanancia;
+	private Integer costo;
 	private String imagen;
 
 	public PlatoDTO() {
@@ -16,7 +16,7 @@ public class PlatoDTO {
 
 	
 
-	public PlatoDTO(String nombre, BigDecimal precioVenta, BigDecimal margenGanancia, BigDecimal costo, String imagen) {
+	public PlatoDTO(String nombre, Integer precioVenta, Integer margenGanancia, Integer costo, String imagen) {
 		super();
 		this.nombre = nombre;
 		this.precioVenta = precioVenta;
@@ -37,27 +37,27 @@ public class PlatoDTO {
 		this.nombre = nombre;
 	}
 
-	public BigDecimal getPrecioVenta() {
+	public Integer getPrecioVenta() {
 		return precioVenta;
 	}
 
-	public void setPrecioVenta(BigDecimal precioVenta) {
+	public void setPrecioVenta(Integer precioVenta) {
 		this.precioVenta = precioVenta;
 	}
 
-	public BigDecimal getMargenGanancia() {
+	public Integer getMargenGanancia() {
 		return margenGanancia;
 	}
 
-	public void setMargenGanancia(BigDecimal margenGanancia) {
+	public void setMargenGanancia(Integer margenGanancia) {
 		this.margenGanancia = margenGanancia;
 	}
 
-	public BigDecimal getCosto() {
+	public Integer getCosto() {
 		return costo;
 	}
 
-	public void setCosto(BigDecimal costo) {
+	public void setCosto(Integer costo) {
 		this.costo = costo;
 	}
 

@@ -8,14 +8,14 @@ public class ProveedorDTO {
     private String primerApellido;
     private String segundoApellido;
     private String email;
-    private Integer telefono;
+    private Long telefono;
     private String cargo;
 	public ProveedorDTO() {
 		super();
 	}
 	
 	public ProveedorDTO(Integer nitEmpresa, String primerNombre, String segundoNombre, String primerApellido,
-			String segundoApellido, String email, Integer telefono, String cargo) {
+			String segundoApellido, String email, Long telefono, String cargo) {
 		super();
 		this.nitEmpresa = nitEmpresa;
 		this.primerNombre = primerNombre;
@@ -64,10 +64,10 @@ public class ProveedorDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getTelefono() {
+	public Long getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(Integer telefono) {
+	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
 	public String getCargo() {

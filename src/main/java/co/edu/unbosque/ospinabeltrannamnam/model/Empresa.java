@@ -16,7 +16,7 @@ public class Empresa {
 	private String email;
 
 	@Column(name = "telefono")
-	private Integer telefono;
+	private Long telefono;
 
 	@ManyToOne
 	@JoinColumn(name = "direccion_id")
@@ -28,7 +28,9 @@ public class Empresa {
 	public Empresa() {
 	}
 
-	public Empresa(Integer nit, String nombre, String email, Integer telefono, DireccionEmpresa direccion, String estado) {
+	
+
+	public Empresa(Integer nit, String nombre, String email, Long telefono, DireccionEmpresa direccion, String estado) {
 		super();
 		this.nit = nit;
 		this.nombre = nombre;
@@ -37,6 +39,8 @@ public class Empresa {
 		this.direccion = direccion;
 		this.estado = estado;
 	}
+
+
 
 	public Integer getNit() {
 		return nit;
@@ -62,13 +66,19 @@ public class Empresa {
 		this.email = email;
 	}
 
-	public Integer getTelefono() {
+	
+
+	public Long getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(Integer telefono) {
+
+
+	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
+
+
 
 	public DireccionEmpresa getDireccion() {
 		return direccion;
