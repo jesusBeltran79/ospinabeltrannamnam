@@ -14,10 +14,11 @@ public class LoteDTO {
 		super();
 	}
 
-	public LoteDTO(Integer loteId, LocalDate fechaRecepcion, Integer cantidad, Integer ordenId,
-			Integer codigoIngrediente, Integer proveedorId) {
+	
+
+	public LoteDTO(LocalDate fechaRecepcion, Integer cantidad, Integer ordenId, Integer codigoIngrediente,
+			Integer proveedorId) {
 		super();
-		this.loteId = loteId;
 		this.fechaRecepcion = fechaRecepcion;
 		this.cantidad = cantidad;
 		this.ordenId = ordenId;
@@ -25,13 +26,9 @@ public class LoteDTO {
 		this.proveedorId = proveedorId;
 	}
 
-	public Integer getLoteId() {
-		return loteId;
-	}
 
-	public void setLoteId(Integer loteId) {
-		this.loteId = loteId;
-	}
+
+	
 
 	public LocalDate getFechaRecepcion() {
 		return fechaRecepcion;

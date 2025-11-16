@@ -14,10 +14,10 @@ public class PlatoDTO {
 		super();
 	}
 
-	public PlatoDTO(Integer platoId, String nombre, BigDecimal precioVenta, BigDecimal margenGanancia, BigDecimal costo,
-			String imagen) {
+	
+
+	public PlatoDTO(String nombre, BigDecimal precioVenta, BigDecimal margenGanancia, BigDecimal costo, String imagen) {
 		super();
-		this.platoId = platoId;
 		this.nombre = nombre;
 		this.precioVenta = precioVenta;
 		this.margenGanancia = margenGanancia;
@@ -25,13 +25,9 @@ public class PlatoDTO {
 		this.imagen = imagen;
 	}
 
-	public Integer getPlatoId() {
-		return platoId;
-	}
 
-	public void setPlatoId(Integer platoId) {
-		this.platoId = platoId;
-	}
+
+	
 
 	public String getNombre() {
 		return nombre;

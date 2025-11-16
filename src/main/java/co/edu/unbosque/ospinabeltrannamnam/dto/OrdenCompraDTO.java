@@ -15,10 +15,11 @@ public class OrdenCompraDTO {
 		super();
 	}
 
-	public OrdenCompraDTO(Integer ordenId, LocalDate fechaEmision, LocalDate fechaRecepcion, String estado,
-			Integer total, Integer nitEmpresa, Integer administradorId) {
+	
+
+	public OrdenCompraDTO(LocalDate fechaEmision, LocalDate fechaRecepcion, String estado, Integer total,
+			Integer nitEmpresa, Integer administradorId) {
 		super();
-		this.ordenId = ordenId;
 		this.fechaEmision = fechaEmision;
 		this.fechaRecepcion = fechaRecepcion;
 		this.estado = estado;
@@ -27,13 +28,9 @@ public class OrdenCompraDTO {
 		this.administradorId = administradorId;
 	}
 
-	public Integer getOrdenId() {
-		return ordenId;
-	}
 
-	public void setOrdenId(Integer ordenId) {
-		this.ordenId = ordenId;
-	}
+
+	
 
 	public LocalDate getFechaEmision() {
 		return fechaEmision;

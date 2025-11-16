@@ -64,10 +64,5 @@ public class Poseer {
 		this.stockMinimo = stockMinimo;
 	}
 
-	@Override
-	public String toString() {
-		return "Poseer [id=" + id + ", ingrediente=" + (ingrediente != null ? ingrediente.getCodigo() : null)
-				+ ", inventario=" + (inventario != null ? inventario.getInventarioId() : null) + ", stockMinimo="
-				+ stockMinimo + "]";
-	}
+	
 }

@@ -7,18 +7,14 @@ public class InventarioDTO {
 	public InventarioDTO() {
 		super();
 	}
-	public InventarioDTO(Integer inventarioId, Integer cantidad, Integer administradorId) {
+	
+	public InventarioDTO(Integer cantidad, Integer administradorId) {
 		super();
-		this.inventarioId = inventarioId;
 		this.cantidad = cantidad;
 		this.administradorId = administradorId;
 	}
-	public Integer getInventarioId() {
-		return inventarioId;
-	}
-	public void setInventarioId(Integer inventarioId) {
-		this.inventarioId = inventarioId;
-	}
+
+	
 	public Integer getCantidad() {
 		return cantidad;
 	}

@@ -12,22 +12,12 @@ public class IngredienteDTO {
 	public IngredienteDTO() {
 	}
 
-	public IngredienteDTO(Integer codigo, String nombre, Integer costoUnitario, LocalDate fechaCaducidad,
-			String estado) {
+	public IngredienteDTO(String nombre, Integer costoUnitario, LocalDate fechaCaducidad, String estado) {
 		super();
-		this.codigo = codigo;
 		this.nombre = nombre;
 		this.costoUnitario = costoUnitario;
 		this.fechaCaducidad = fechaCaducidad;
 		this.estado = estado;
-	}
-
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
 	}
 
 	public String getNombre() {

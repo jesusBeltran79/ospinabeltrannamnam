@@ -13,10 +13,10 @@ public class ProveedorDTO {
 	public ProveedorDTO() {
 		super();
 	}
-	public ProveedorDTO(Integer proveedorId, Integer nitEmpresa, String primerNombre, String segundoNombre,
-			String primerApellido, String segundoApellido, String email, Integer telefono, String cargo) {
+	
+	public ProveedorDTO(Integer nitEmpresa, String primerNombre, String segundoNombre, String primerApellido,
+			String segundoApellido, String email, Integer telefono, String cargo) {
 		super();
-		this.proveedorId = proveedorId;
 		this.nitEmpresa = nitEmpresa;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
@@ -26,12 +26,8 @@ public class ProveedorDTO {
 		this.telefono = telefono;
 		this.cargo = cargo;
 	}
-	public Integer getProveedorId() {
-		return proveedorId;
-	}
-	public void setProveedorId(Integer proveedorId) {
-		this.proveedorId = proveedorId;
-	}
+
+	
 	public Integer getNitEmpresa() {
 		return nitEmpresa;
 	}

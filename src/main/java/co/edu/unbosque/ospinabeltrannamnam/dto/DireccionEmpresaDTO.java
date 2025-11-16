@@ -11,23 +11,19 @@ public class DireccionEmpresaDTO {
 		super();
 	}
 
-	public DireccionEmpresaDTO(Integer direccionId, String direccionText, String ciudad, String departamento,
-			String pais) {
+	
+
+	public DireccionEmpresaDTO(String direccionText, String ciudad, String departamento, String pais) {
 		super();
-		this.direccionId = direccionId;
 		this.direccionText = direccionText;
 		this.ciudad = ciudad;
 		this.departamento = departamento;
 		this.pais = pais;
 	}
 
-	public Integer getDireccionId() {
-		return direccionId;
-	}
 
-	public void setDireccionId(Integer direccionId) {
-		this.direccionId = direccionId;
-	}
+
+	
 
 	public String getDireccionText() {
 		return direccionText;

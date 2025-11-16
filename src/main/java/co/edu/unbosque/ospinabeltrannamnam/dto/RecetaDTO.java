@@ -14,10 +14,11 @@ public class RecetaDTO {
 		super();
 	}
 
-	public RecetaDTO(Integer recetaId, String nombre, String descripcion, Integer tiempoPreparacion, String imagen,
+	
+
+	public RecetaDTO(String nombre, String descripcion, Integer tiempoPreparacion, String imagen,
 			List<Integer> ingredientes) {
 		super();
-		this.recetaId = recetaId;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tiempoPreparacion = tiempoPreparacion;
@@ -25,13 +26,9 @@ public class RecetaDTO {
 		this.ingredientes = ingredientes;
 	}
 
-	public Integer getRecetaId() {
-		return recetaId;
-	}
 
-	public void setRecetaId(Integer recetaId) {
-		this.recetaId = recetaId;
-	}
+
+	
 
 	public String getNombre() {
 		return nombre;

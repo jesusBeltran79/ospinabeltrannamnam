@@ -10,19 +10,15 @@ public class PoseerDTO {
 	public PoseerDTO() {
 		super();
 	}
-	public PoseerDTO(Integer id, Integer codigoIngrediente, Integer inventarioId, BigDecimal stockMinimo) {
+	
+	public PoseerDTO(Integer codigoIngrediente, Integer inventarioId, BigDecimal stockMinimo) {
 		super();
-		this.id = id;
 		this.codigoIngrediente = codigoIngrediente;
 		this.inventarioId = inventarioId;
 		this.stockMinimo = stockMinimo;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+
+	
 	public Integer getCodigoIngrediente() {
 		return codigoIngrediente;
 	}
