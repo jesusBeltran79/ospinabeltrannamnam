@@ -17,6 +17,7 @@ public class LoteController {
     @Autowired
     private LoteService service;
 
+    // POST /api/lotes  (REST)
     @PostMapping
     public ResponseEntity<String> crear(@RequestBody LoteDTO dto) {
         int res = service.create(dto);
@@ -24,9 +25,22 @@ public class LoteController {
         return ResponseEntity.ok("Lote creado correctamente.");
     }
 
+    // compatibilidad: POST /api/lotes/create (usada por el frontend legacy)
+    @PostMapping("/create")
+    public ResponseEntity<String> crearAlias(@RequestBody LoteDTO dto) {
+        return crear(dto);
+    }
+
+    // GET /api/lotes
     @GetMapping
     public ResponseEntity<List<LoteDTO>> listar() {
         return ResponseEntity.ok(service.getAll());
+    }
+
+    // compatibilidad: GET /api/lotes/all
+    @GetMapping("/all")
+    public ResponseEntity<List<LoteDTO>> listarAll() {
+        return listar();
     }
 
     @GetMapping("/{id}")
@@ -48,5 +62,11 @@ public class LoteController {
         int res = service.deleteById(id);
         if (res != 0) return ResponseEntity.badRequest().body("No existe el lote especificado.");
         return ResponseEntity.ok("Lote eliminado correctamente.");
+    }
+
+    // compatibilidad: DELETE /api/lotes/delete/{id}
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> eliminarAlias(@PathVariable Integer id) {
+        return eliminar(id);
     }
 }
