@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Receta;
 
 @Repository
-public interface RecetaRepository extends JpaRepository<Receta, Integer> { }
+public interface RecetaRepository extends JpaRepository<Receta, Integer> {
+}

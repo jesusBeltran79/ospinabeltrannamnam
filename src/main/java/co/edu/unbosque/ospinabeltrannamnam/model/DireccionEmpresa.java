@@ -21,15 +21,13 @@ public class DireccionEmpresa {
 
 	@Column(name = "pais", length = 100)
 	private String pais;
-	
-	 @ManyToOne
-	    @JoinColumn(name = "empresa_nit", referencedColumnName = "nit")
-	    private Empresa empresa;
+
+	@ManyToOne
+	@JoinColumn(name = "empresa_nit", referencedColumnName = "nit")
+	private Empresa empresa;
 
 	public DireccionEmpresa() {
 	}
-
-	
 
 	public DireccionEmpresa(String direccionText, String ciudad, String departamento, String pais, Empresa empresa) {
 		super();
@@ -40,19 +38,13 @@ public class DireccionEmpresa {
 		this.empresa = empresa;
 	}
 
-
-
 	public Empresa getEmpresa() {
 		return empresa;
 	}
 
-
-
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-
-
 
 	public Integer getDireccionId() {
 		return direccionId;

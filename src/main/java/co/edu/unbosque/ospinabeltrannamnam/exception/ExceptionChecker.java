@@ -1,15 +1,8 @@
-/**
- * Esta la clase Util, en la cual creamos nuestras excepciones propias, para poder limitar los errores que pueda generar el usuario.
- */
 package co.edu.unbosque.ospinabeltrannamnam.exception;
 
-import java.util.regex.Matcher; // Quien busca si hay similitud
-import java.util.regex.Pattern;//Nos da el patron a buscar
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- * Clase utilitaria para verificar la validez de entradas de datos y lanzar
- * excepciones personalizadas.
- */
 public class ExceptionChecker {
 
 	public static void notValidPasswordException(String pass) throws NotValidPasswordException {
@@ -81,7 +74,6 @@ public class ExceptionChecker {
 	}
 
 	public static void validateEmail(String email) throws NotValidEmailException {
-
 		String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 		Pattern pattern = Pattern.compile(regex);
 

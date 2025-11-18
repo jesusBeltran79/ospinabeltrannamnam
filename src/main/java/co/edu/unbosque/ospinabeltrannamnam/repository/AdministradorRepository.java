@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Administrador;
 
 @Repository
-public interface AdministradorRepository extends JpaRepository<Administrador, Integer> { }
+public interface AdministradorRepository extends JpaRepository<Administrador, Integer> {
+}

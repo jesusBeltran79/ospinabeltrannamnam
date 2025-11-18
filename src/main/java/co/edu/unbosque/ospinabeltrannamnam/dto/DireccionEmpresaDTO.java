@@ -11,6 +11,7 @@ public class DireccionEmpresaDTO {
 	public DireccionEmpresaDTO() {
 		super();
 	}
+
 	public DireccionEmpresaDTO(Integer direccionId, String direccionText, String ciudad, String departamento,
 			String pais, Integer empresaNit) {
 		super();
@@ -22,25 +23,22 @@ public class DireccionEmpresaDTO {
 		this.empresaNit = empresaNit;
 	}
 
-
-
-
-
-
-
-
 	public Integer getDireccionId() {
 		return direccionId;
 	}
+
 	public void setDireccionId(Integer direccionId) {
 		this.direccionId = direccionId;
 	}
+
 	public Integer getEmpresaNit() {
 		return empresaNit;
 	}
+
 	public void setEmpresaNit(Integer empresaNit) {
 		this.empresaNit = empresaNit;
 	}
+
 	public String getDireccionText() {
 		return direccionText;
 	}

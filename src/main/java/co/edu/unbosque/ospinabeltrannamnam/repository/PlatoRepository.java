@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Plato;
 
 @Repository
-public interface PlatoRepository extends JpaRepository<Plato, Integer> { }
+public interface PlatoRepository extends JpaRepository<Plato, Integer> {
+}

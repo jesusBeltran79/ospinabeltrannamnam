@@ -6,38 +6,36 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "inventario")
 public class Inventario {
-    @Id
-    @Column(name = "inventario_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer inventarioId;
+	@Id
+	@Column(name = "inventario_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer inventarioId;
 
-    @Column(name = "cantidad", nullable = false)
-    private Integer cantidad;
+	@Column(name = "cantidad", nullable = true)
+	private Integer cantidad;
 
-    @OneToOne
-    @JoinColumn(name = "administrador_id", unique = true)
-    private Administrador administrador;
+	@OneToOne
+	@JoinColumn(name = "administrador_id", unique = true)
+	private Administrador administrador;
 
-    
-    @ManyToOne
-    @JoinColumn(name = "codigo_ingrediente")
-    private Ingrediente ingrediente;
+	@ManyToOne
+	@JoinColumn(name = "codigo_ingrediente")
+	private Ingrediente ingrediente;
 
-    
-    @Column(name = "stock_minimo", precision = 20, scale = 4)
-    private BigDecimal stockMinimo = BigDecimal.ZERO;
+	@Column(name = "stock_minimo", precision = 20, scale = 4)
+	private BigDecimal stockMinimo = BigDecimal.ZERO;
 
-    public Inventario() { }
+	public Inventario() {
+	}
 
-    public Inventario(Integer cantidad, Administrador administrador, Ingrediente ingrediente, BigDecimal stockMinimo) {
-        this.cantidad = cantidad;
-        this.administrador = administrador;
-        this.ingrediente = ingrediente;
-        this.stockMinimo = stockMinimo;
-    }
+	public Inventario(Integer cantidad, Administrador administrador, Ingrediente ingrediente, BigDecimal stockMinimo) {
+		this.cantidad = cantidad;
+		this.administrador = administrador;
+		this.ingrediente = ingrediente;
+		this.stockMinimo = stockMinimo;
+	}
 
-    
-    public Integer getInventarioId() {
+	public Integer getInventarioId() {
 		return inventarioId;
 	}
 
@@ -78,8 +76,9 @@ public class Inventario {
 	}
 
 	@Override
-    public String toString() {
-        return "Inventario [inventarioId=" + inventarioId + ", cantidad=" + cantidad + ", administrador=" + administrador
-                + ", ingrediente=" + (ingrediente != null ? ingrediente.getCodigo() : null) + ", stockMinimo=" + stockMinimo + "]";
-    }
+	public String toString() {
+		return "Inventario [inventarioId=" + inventarioId + ", cantidad=" + cantidad + ", administrador="
+				+ administrador + ", ingrediente=" + (ingrediente != null ? ingrediente.getCodigo() : null)
+				+ ", stockMinimo=" + stockMinimo + "]";
+	}
 }

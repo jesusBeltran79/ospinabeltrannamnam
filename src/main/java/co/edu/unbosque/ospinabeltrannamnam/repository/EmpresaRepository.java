@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Empresa;
 
 @Repository
-public interface EmpresaRepository extends JpaRepository<Empresa, Integer> { }
+public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
+}

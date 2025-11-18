@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Inventario;
 
 @Repository
-public interface InventarioRepository extends JpaRepository<Inventario, Integer> { }
+public interface InventarioRepository extends JpaRepository<Inventario, Integer> {
+}

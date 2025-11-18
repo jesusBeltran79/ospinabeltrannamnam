@@ -7,7 +7,8 @@ import java.util.List;
 
 @Repository
 public interface DireccionEmpresaRepository extends JpaRepository<DireccionEmpresa, Integer> {
-    List<DireccionEmpresa> findByEmpresa_Nit(Integer nit);
-    List<DireccionEmpresa> findByEmpresaNit(Integer empresaNit);
+	List<DireccionEmpresa> findByEmpresa_Nit(Integer nit);
+
+	List<DireccionEmpresa> findByEmpresaNit(Integer empresaNit);
 
 }

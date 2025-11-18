@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.OrdenCompra;
 
 @Repository
-public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Integer> { }
+public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Integer> {
+}

@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Proveedor;
 
 @Repository
-public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> { }
+public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
+}

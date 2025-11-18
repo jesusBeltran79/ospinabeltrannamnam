@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import co.edu.unbosque.ospinabeltrannamnam.model.Lote;
 
 @Repository
-public interface LoteRepository extends JpaRepository<Lote, Integer> { }
+public interface LoteRepository extends JpaRepository<Lote, Integer> {
+}

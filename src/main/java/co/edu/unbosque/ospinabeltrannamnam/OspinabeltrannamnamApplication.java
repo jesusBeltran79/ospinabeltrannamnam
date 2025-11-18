@@ -11,12 +11,12 @@ public class OspinabeltrannamnamApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OspinabeltrannamnamApplication.class, args);
 	}
-	
+
 	@SpringBootApplication
 	public class nombreproyectoApplication {
 		@Bean
 		public ModelMapper getModelMapper() {
-			return new  ModelMapper();
+			return new ModelMapper();
 		}
 	}
 

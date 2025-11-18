@@ -12,8 +12,6 @@ public class EmpresaDTO {
 		super();
 	}
 
-	
-
 	public EmpresaDTO(Integer nit, String nombre, String email, Long telefono, Integer direccionId, String estado) {
 		super();
 		this.nit = nit;
@@ -23,8 +21,6 @@ public class EmpresaDTO {
 		this.direccionId = direccionId;
 		this.estado = estado;
 	}
-
-
 
 	public Long getTelefono() {
 		return telefono;

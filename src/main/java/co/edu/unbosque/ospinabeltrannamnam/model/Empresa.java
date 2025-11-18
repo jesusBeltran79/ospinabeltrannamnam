@@ -28,8 +28,6 @@ public class Empresa {
 	public Empresa() {
 	}
 
-	
-
 	public Empresa(Integer nit, String nombre, String email, Long telefono, DireccionEmpresa direccion, String estado) {
 		super();
 		this.nit = nit;
@@ -39,8 +37,6 @@ public class Empresa {
 		this.direccion = direccion;
 		this.estado = estado;
 	}
-
-
 
 	public Integer getNit() {
 		return nit;
@@ -66,19 +62,13 @@ public class Empresa {
 		this.email = email;
 	}
 
-	
-
 	public Long getTelefono() {
 		return telefono;
 	}
 
-
-
 	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
-
-
 
 	public DireccionEmpresa getDireccion() {
 		return direccion;
