@@ -20,7 +20,7 @@ public class RecetaController {
     @PostMapping
     public ResponseEntity<String> crear(@RequestBody RecetaDTO dto) {
         int res = service.create(dto);
-        if (res != 0) return ResponseEntity.badRequest().body("No se pudo crear la receta. Verifique los ingredientes.");
+        if (res != 0) return ResponseEntity.badRequest().body("No se pudo crear la receta. Verifique los datos.");
         return ResponseEntity.ok("Receta creada correctamente.");
     }
 
